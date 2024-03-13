@@ -1,0 +1,657 @@
+{
+    "scripts": [
+        {
+            "id": "be7e3a3f-8bb3-4830-a514-23920bbbf72e",
+            "script_id": "54b34fd1-e42e-4844-ba66-f86541044907",
+            "user_id": null,
+            "portal_id": null,
+            "tenant_id": null,
+            "group_id": null,
+            "created_by": null,
+            "script": {
+                "id": "54b34fd1-e42e-4844-ba66-f86541044907",
+                "name": "ICMP Echo",
+                "description": "",
+                "arguments": [
+                    {
+                        "nodes": [
+                            {
+                                "max": 1000,
+                                "min": 1,
+                                "type": "int",
+                                "param_name": "packets",
+                                "display_name": "Number of packets"
+                            },
+                            {
+                                "max": 5000,
+                                "min": 10,
+                                "type": "int",
+                                "unit": "milliseconds",
+                                "param_name": "interval",
+                                "display_name": "Interval between packets"
+                            },
+                            {
+                                "max": 1000,
+                                "min": 10,
+                                "type": "int",
+                                "unit": "milliseconds",
+                                "param_name": "timeout",
+                                "display_name": "Timeout"
+                            }
+                        ],
+                        "display_name": "Packet"
+                    },
+                    {
+                        "max": 1460,
+                        "min": 18,
+                        "type": "int",
+                        "unit": "bytes",
+                        "optional": true,
+                        "param_name": "data_size",
+                        "display_name": "Datasize"
+                    },
+                    {
+                        "type": "boolean",
+                        "truthy": "enable",
+                        "falsely": "disable",
+                        "param_name": "verify_data",
+                        "display_name": "Verify data"
+                    },
+                    {
+                        "only": [
+                            "all",
+                            "eth1",
+                            "eth2",
+                            "cell",
+                            "wlan",
+                            "ap"
+                        ],
+                        "type": "string",
+                        "default": "all",
+                        "param_name": "interface",
+                        "display_name": "ICMP interface"
+                    },
+                    {
+                        "nodes": [
+                            {
+                                "type": "string",
+                                "param_name": "host",
+                                "display_name": "Host"
+                            }
+                        ],
+                        "display_name": "Destination"
+                    }
+                ],
+                "location": null,
+                "applicable_for": [
+                    "slb",
+                    "slc"
+                ],
+                "type": "inbuilt",
+                "run_command": "add ${probe_id} ${probe_name} type icmp ${packets} ${interval} ${timeout} ${host} ${port} ${data_size} ${verify_data} ${interface} ${dns_server} ${voip_codec} ${tos} ${frequency}",
+                "has_scheduler": true,
+                "created_by": null,
+                "script_language": null,
+                "version": null,
+                "script_content": null,
+                "created_at": "2019-01-25T02:29:25.021Z",
+                "updated_at": "2019-01-25T02:29:25.021Z",
+                "deleted_at": null
+            }
+        },
+        {
+            "id": "fbc9c129-7642-4b9d-8fd4-3bfea9ac49f1",
+            "script_id": "882b1825-676c-4f68-b632-92505b087c77",
+            "user_id": null,
+            "portal_id": null,
+            "tenant_id": null,
+            "group_id": null,
+            "created_by": null,
+            "script": {
+                "id": "882b1825-676c-4f68-b632-92505b087c77",
+                "name": "HTTP Get",
+                "description": "",
+                "arguments": [
+                    {
+                        "nodes": [
+                            {
+                                "max": 1000,
+                                "min": 1,
+                                "type": "int",
+                                "param_name": "packets",
+                                "display_name": "Number of packets"
+                            },
+                            {
+                                "max": 5000,
+                                "min": 10,
+                                "type": "int",
+                                "unit": "milliseconds",
+                                "param_name": "interval",
+                                "display_name": "Interval between packets"
+                            },
+                            {
+                                "max": 1000,
+                                "min": 10,
+                                "type": "int",
+                                "unit": "milliseconds",
+                                "param_name": "timeout",
+                                "display_name": "Timeout"
+                            }
+                        ],
+                        "display_name": "Packet"
+                    },
+                    {
+                        "nodes": [
+                            {
+                                "type": "domain",
+                                "param_name": "host",
+                                "display_name": "Host"
+                            },
+                            {
+                                "max": 65535,
+                                "min": 0,
+                                "type": "int",
+                                "param_name": "port",
+                                "display_name": "Port"
+                            }
+                        ],
+                        "display_name": "Destination"
+                    }
+                ],
+                "location": null,
+                "applicable_for": [
+                    "slb",
+                    "slc"
+                ],
+                "type": "inbuilt",
+                "run_command": "add ${probe_id} ${probe_name} type http ${packets} ${interval} ${timeout} ${host} ${port} ${data_size} ${verify_data} ${interface} ${dns_server} ${voip_codec} ${tos} ${frequency}",
+                "has_scheduler": true,
+                "created_by": null,
+                "script_language": null,
+                "version": null,
+                "script_content": null,
+                "created_at": "2019-01-25T02:29:25.021Z",
+                "updated_at": "2019-01-25T02:29:25.021Z",
+                "deleted_at": null
+            }
+        },
+        {
+            "id": "4e48a588-b1fe-4a80-9e40-15f822a07235",
+            "script_id": "36f400b2-1575-4af7-89c7-45574a249440",
+            "user_id": null,
+            "portal_id": null,
+            "tenant_id": null,
+            "group_id": null,
+            "created_by": null,
+            "script": {
+                "id": "36f400b2-1575-4af7-89c7-45574a249440",
+                "name": "TCP Connect",
+                "description": "",
+                "arguments": [
+                    {
+                        "nodes": [
+                            {
+                                "max": 1000,
+                                "min": 1,
+                                "type": "int",
+                                "param_name": "packets",
+                                "display_name": "Number of packets"
+                            },
+                            {
+                                "max": 5000,
+                                "min": 10,
+                                "type": "int",
+                                "unit": "milliseconds",
+                                "param_name": "interval",
+                                "display_name": "Interval between packets"
+                            },
+                            {
+                                "max": 1000,
+                                "min": 10,
+                                "type": "int",
+                                "unit": "milliseconds",
+                                "param_name": "timeout",
+                                "display_name": "Timeout"
+                            }
+                        ],
+                        "display_name": "Packet"
+                    },
+                    {
+                        "max": 1460,
+                        "min": 0,
+                        "type": "int",
+                        "unit": "bytes",
+                        "optional": true,
+                        "param_name": "data_size",
+                        "display_name": "Datasize"
+                    },
+                    {
+                        "nodes": [
+                            {
+                                "type": "domain",
+                                "param_name": "host",
+                                "display_name": "Host"
+                            },
+                            {
+                                "max": 65535,
+                                "min": 0,
+                                "type": "int",
+                                "param_name": "port",
+                                "display_name": "Port"
+                            }
+                        ],
+                        "display_name": "Destination"
+                    }
+                ],
+                "location": null,
+                "applicable_for": [
+                    "slb",
+                    "slc"
+                ],
+                "type": "inbuilt",
+                "run_command": "add ${probe_id} ${probe_name} type tcpconnect ${packets} ${interval} ${timeout} ${host} ${port} ${data_size} ${verify_data} ${interface} ${dns_server} ${voip_codec} ${tos} ${frequency}",
+                "has_scheduler": true,
+                "created_by": null,
+                "script_language": null,
+                "version": null,
+                "script_content": null,
+                "created_at": "2019-01-25T02:29:25.021Z",
+                "updated_at": "2019-01-25T02:29:25.021Z",
+                "deleted_at": null
+            }
+        },
+        {
+            "id": "bb005e60-9b50-4298-8be6-75fc0d670533",
+            "script_id": "369dab2f-8250-44ab-a1d2-714a1d67a9e2",
+            "user_id": null,
+            "portal_id": null,
+            "tenant_id": null,
+            "group_id": null,
+            "created_by": null,
+            "script": {
+                "id": "369dab2f-8250-44ab-a1d2-714a1d67a9e2",
+                "name": "UDP Echo",
+                "description": "",
+                "arguments": [
+                    {
+                        "nodes": [
+                            {
+                                "max": 1000,
+                                "min": 1,
+                                "type": "int",
+                                "param_name": "packets",
+                                "display_name": "Number of packets"
+                            },
+                            {
+                                "max": 5000,
+                                "min": 10,
+                                "type": "int",
+                                "unit": "milliseconds",
+                                "param_name": "interval",
+                                "display_name": "Interval between packets"
+                            },
+                            {
+                                "max": 1000,
+                                "min": 10,
+                                "type": "int",
+                                "unit": "milliseconds",
+                                "param_name": "timeout",
+                                "display_name": "Timeout"
+                            }
+                        ],
+                        "display_name": "Packet"
+                    },
+                    {
+                        "max": 1460,
+                        "min": 4,
+                        "type": "int",
+                        "unit": "bytes",
+                        "optional": true,
+                        "param_name": "data_size",
+                        "display_name": "Datasize"
+                    },
+                    {
+                        "type": "boolean",
+                        "truthy": "enable",
+                        "falsely": "disable",
+                        "param_name": "verify_data",
+                        "display_name": "Verify data"
+                    },
+                    {
+                        "nodes": [
+                            {
+                                "type": "domain",
+                                "param_name": "host",
+                                "display_name": "Host"
+                            },
+                            {
+                                "max": 65535,
+                                "min": 0,
+                                "type": "int",
+                                "param_name": "port",
+                                "display_name": "Port"
+                            }
+                        ],
+                        "display_name": "Destination"
+                    }
+                ],
+                "location": null,
+                "applicable_for": [
+                    "slb",
+                    "slc"
+                ],
+                "type": "inbuilt",
+                "run_command": "add ${probe_id} ${probe_name} type udpecho ${packets} ${interval} ${timeout} ${host} ${port} ${data_size} ${verify_data} ${interface} ${dns_server} ${voip_codec} ${tos} ${frequency}",
+                "has_scheduler": true,
+                "created_by": null,
+                "script_language": null,
+                "version": null,
+                "script_content": null,
+                "created_at": "2019-01-25T02:29:25.021Z",
+                "updated_at": "2019-01-25T02:29:25.021Z",
+                "deleted_at": null
+            }
+        },
+        {
+            "id": "13999d7f-c61c-4874-b8a6-9c9736338fe4",
+            "script_id": "76ad2cee-fd38-4f7e-acbf-4bd26eb76915",
+            "user_id": null,
+            "portal_id": null,
+            "tenant_id": null,
+            "group_id": null,
+            "created_by": null,
+            "script": {
+                "id": "76ad2cee-fd38-4f7e-acbf-4bd26eb76915",
+                "name": "DNS Lookup",
+                "description": "",
+                "arguments": [
+                    {
+                        "nodes": [
+                            {
+                                "max": 1000,
+                                "min": 1,
+                                "type": "int",
+                                "param_name": "packets",
+                                "display_name": "Number of packets"
+                            },
+                            {
+                                "max": 5000,
+                                "min": 10,
+                                "type": "int",
+                                "unit": "milliseconds",
+                                "param_name": "interval",
+                                "display_name": "Interval between packets"
+                            },
+                            {
+                                "max": 1000,
+                                "min": 10,
+                                "type": "int",
+                                "unit": "milliseconds",
+                                "param_name": "timeout",
+                                "display_name": "Timeout"
+                            }
+                        ],
+                        "display_name": "Packet"
+                    },
+                    {
+                        "type": "ip",
+                        "param_name": "dns_server",
+                        "display_name": "Name server"
+                    },
+                    {
+                        "nodes": [
+                            {
+                                "type": "domain",
+                                "param_name": "host",
+                                "display_name": "Host"
+                            },
+                            {
+                                "max": 65535,
+                                "min": 0,
+                                "only": [
+                                    53
+                                ],
+                                "type": "int",
+                                "param_name": "port",
+                                "display_name": "Port"
+                            }
+                        ],
+                        "display_name": "Destination"
+                    }
+                ],
+                "location": null,
+                "applicable_for": [
+                    "slb",
+                    "slc"
+                ],
+                "type": "inbuilt",
+                "run_command": "add ${probe_id} ${probe_name} type dns ${packets} ${interval} ${timeout} ${host} ${port} ${data_size} ${verify_data} ${interface} ${dns_server} ${voip_codec} ${tos} ${frequency}",
+                "has_scheduler": true,
+                "created_by": null,
+                "script_language": null,
+                "version": null,
+                "script_content": null,
+                "created_at": "2019-01-25T02:29:25.021Z",
+                "updated_at": "2019-01-25T02:29:25.021Z",
+                "deleted_at": null
+            }
+        },
+        {
+            "id": "de45735e-9900-4238-8e9f-b32595919cde",
+            "script_id": "8e704a45-f496-4df5-a41b-098fa95e2809",
+            "user_id": null,
+            "portal_id": null,
+            "tenant_id": null,
+            "group_id": null,
+            "created_by": null,
+            "script": {
+                "id": "8e704a45-f496-4df5-a41b-098fa95e2809",
+                "name": "UDP Jitter",
+                "description": "",
+                "arguments": [
+                    {
+                        "nodes": [
+                            {
+                                "max": 1000,
+                                "min": 1,
+                                "type": "int",
+                                "param_name": "packets",
+                                "display_name": "Number of packets"
+                            },
+                            {
+                                "max": 5000,
+                                "min": 10,
+                                "type": "int",
+                                "unit": "milliseconds",
+                                "param_name": "interval",
+                                "display_name": "Interval between packets"
+                            },
+                            {
+                                "max": 1000,
+                                "min": 10,
+                                "type": "int",
+                                "unit": "milliseconds",
+                                "param_name": "timeout",
+                                "display_name": "Timeout"
+                            }
+                        ],
+                        "display_name": "Packet"
+                    },
+                    {
+                        "max": 1460,
+                        "min": 64,
+                        "type": "int",
+                        "unit": "bytes",
+                        "optional": true,
+                        "param_name": "data_size",
+                        "display_name": "Datasize"
+                    },
+                    {
+                        "max": 225,
+                        "min": 0,
+                        "type": "int",
+                        "optional": true,
+                        "param_name": "tos",
+                        "display_name": "TOS"
+                    },
+                    {
+                        "type": "boolean",
+                        "truthy": "enable",
+                        "falsely": "disable",
+                        "param_name": "verify_data",
+                        "display_name": "Verify data"
+                    },
+                    {
+                        "nodes": [
+                            {
+                                "type": "domain",
+                                "param_name": "host",
+                                "display_name": "Host"
+                            },
+                            {
+                                "max": 65535,
+                                "min": 0,
+                                "type": "int",
+                                "param_name": "port",
+                                "display_name": "Port"
+                            }
+                        ],
+                        "display_name": "Destination"
+                    }
+                ],
+                "location": null,
+                "applicable_for": [
+                    "slb",
+                    "slc"
+                ],
+                "type": "inbuilt",
+                "run_command": "add ${probe_id} ${probe_name} type udpjitter ${packets} ${interval} ${timeout} ${host} ${port} ${data_size} ${verify_data} ${interface} ${dns_server} ${voip_codec} ${tos} ${frequency}",
+                "has_scheduler": true,
+                "created_by": null,
+                "script_language": null,
+                "version": null,
+                "script_content": null,
+                "created_at": "2019-01-25T02:29:25.021Z",
+                "updated_at": "2019-01-25T02:29:25.021Z",
+                "deleted_at": null
+            }
+        },
+        {
+            "id": "9259d001-22c5-4775-aa1e-0a91f8f7cd15",
+            "script_id": "3394ad75-7a0a-44bc-95c0-03910810d1d9",
+            "user_id": null,
+            "portal_id": null,
+            "tenant_id": null,
+            "group_id": null,
+            "created_by": null,
+            "script": {
+                "id": "3394ad75-7a0a-44bc-95c0-03910810d1d9",
+                "name": "UDP Jitter VoIP",
+                "description": "",
+                "arguments": [
+                    {
+                        "nodes": [
+                            {
+                                "only": [
+                                    1000
+                                ],
+                                "type": "int",
+                                "param_name": "packets",
+                                "display_name": "Number of packets"
+                            },
+                            {
+                                "only": [
+                                    20
+                                ],
+                                "type": "int",
+                                "unit": "milliseconds",
+                                "param_name": "interval",
+                                "display_name": "Interval between packets"
+                            },
+                            {
+                                "max": 1000,
+                                "min": 10,
+                                "type": "int",
+                                "unit": "milliseconds",
+                                "param_name": "timeout",
+                                "display_name": "Timeout"
+                            }
+                        ],
+                        "display_name": "Packet"
+                    },
+                    {
+                        "max": 1460,
+                        "min": 64,
+                        "type": "int",
+                        "unit": "bytes",
+                        "optional": true,
+                        "param_name": "data_size",
+                        "display_name": "Datasize"
+                    },
+                    {
+                        "max": 225,
+                        "min": 0,
+                        "type": "int",
+                        "optional": true,
+                        "param_name": "tos",
+                        "display_name": "TOS"
+                    },
+                    {
+                        "type": "boolean",
+                        "truthy": "enable",
+                        "falsely": "disable",
+                        "param_name": "verify_data",
+                        "display_name": "Verify data"
+                    },
+                    {
+                        "only": [
+                            "g729a",
+                            "g711alaw",
+                            "g711mulaw"
+                        ],
+                        "type": "string",
+                        "param_name": "voip_codec",
+                        "display_name": "Codec"
+                    },
+                    {
+                        "nodes": [
+                            {
+                                "type": "domain",
+                                "param_name": "host",
+                                "display_name": "Host"
+                            },
+                            {
+                                "max": 65535,
+                                "min": 0,
+                                "type": "int",
+                                "param_name": "port",
+                                "display_name": "Port"
+                            }
+                        ],
+                        "display_name": "Destination"
+                    }
+                ],
+                "location": null,
+                "applicable_for": [
+                    "slb",
+                    "slc"
+                ],
+                "type": "inbuilt",
+                "run_command": "add ${probe_id} ${probe_name} type udpjittervoip ${packets} ${interval} ${timeout} ${host} ${port} ${data_size} ${verify_data} ${interface} ${dns_server} ${voip_codec} ${tos} ${frequency}",
+                "has_scheduler": true,
+                "created_by": null,
+                "script_language": null,
+                "version": null,
+                "script_content": null,
+                "created_at": "2019-01-25T02:29:25.021Z",
+                "updated_at": "2019-01-25T02:29:25.021Z",
+                "deleted_at": null
+            }
+        }
+    ],
+    "pagination": {
+        "offset": 0,
+        "limit": 10,
+        "total": 7
+    }
+}

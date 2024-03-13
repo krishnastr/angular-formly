@@ -1,0 +1,19 @@
+@import 'bootstrap/scss/bootstrap.scss';
+body { padding: 10px; }
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css'; 
+
+
+
+@import "primeng/resources/themes/saga-blue/theme.css";
+@import "primeng/resources/primeng.min.css";
+@import "primeflex/primeflex.css";
+@import "primeicons/primeicons.css";
+
+
+.spacing {
+    margin : 100px;
+}
+
+form {
+    margin: 50px;
+}
